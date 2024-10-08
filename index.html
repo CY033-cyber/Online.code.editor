@@ -3,36 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Code Editor</title>
     <link rel="stylesheet" href="styles.css">
-    <title>Code Editor</title>
 </head>
-<body class="light">
+<body>
+    
     <div class="top-bar">
-        <button id="themeButton">Switch Theme</button>
         <label for="editorSelect">Select Editor:</label>
         <select id="editorSelect">
-            <option value="html">HTML, CSS, JS</option>
-            <option value="python">Python</option>
-            <option value="cpp">C++</option>
-            <option value="java">Java</option>
-            <option value="go">Go</option>
-            <option value="rust">Rust</option>
-            <option value="php">PHP</option>
-            <option value="csharp">C#</option>
-            <option value="sql">SQL</option>
-            <option value="perl">Perl</option>
-            <option value="r">R</option>
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="javascript">JavaScript</option>
         </select>
-        <button id="saveButton">Save Code</button>
+        <button id="themeButton">Switch Theme</button>
     </div>
 
     <div class="editor-container">
-        <textarea id="codeArea" placeholder="Write your code here..."></textarea>
-        
+        <textarea id="htmlCode" placeholder="HTML code here..."></textarea>
+        <textarea id="cssCode" placeholder="CSS code here..."></textarea>
+        <textarea id="jsCode" placeholder="JavaScript code here..."></textarea>
     </div>
-
+    
     <button id="runButton">Run Code</button>
-    <iframe class="output-frame" id="output"></iframe>
+    <iframe id="output" class="output-frame"></iframe>
 
     <script src="script.js"></script>
 </body>

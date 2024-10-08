@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multi-Language Code Editor</title>
     <link rel="stylesheet" href="styles.css">
+    <title>Code Editor</title>
 </head>
-
 <body class="light">
-
     <div class="top-bar">
-        <label for="editorSelect">Select Language:</label>
+        <button id="themeButton">Switch Theme</button>
+        <label for="editorSelect">Select Editor:</label>
         <select id="editorSelect">
-            <option value="html-css-js">HTML, CSS, JS</option>
+            <option value="html">HTML, CSS, JS</option>
             <option value="python">Python</option>
             <option value="cpp">C++</option>
             <option value="java">Java</option>
@@ -25,58 +23,17 @@
             <option value="perl">Perl</option>
             <option value="r">R</option>
         </select>
-        <button id="themeButton">Switch Theme</button>
         <button id="saveButton">Save Code</button>
-        <button id="loadButton">Load Code</button>
     </div>
 
-    <div class="editor-container" id="editorContainer">
-        <div id="htmlCssJsEditors" class="editor-group active">
-            <div class="editor resizable">
-                <h3>HTML</h3>
-                <textarea id="htmlCode" placeholder="HTML code here..."></textarea>
-                <div class="resize-handle"></div>
-            </div>
-            <div class="editor resizable">
-                <h3>CSS</h3>
-                <textarea id="cssCode" placeholder="CSS code here..."></textarea>
-                <div class="resize-handle"></div>
-            </div>
-            <div class="editor resizable">
-                <h3>JavaScript</h3>
-                <textarea id="jsCode" placeholder="JavaScript code here..."></textarea>
-                <div class="resize-handle"></div>
-            </div>
-        </div>
-        <div id="pythonEditor" class="editor-group hidden">
-            <div class="editor resizable">
-                <h3>Python</h3>
-                <textarea id="pythonCode" placeholder="Python code here..."></textarea>
-                <div class="resize-handle"></div>
-            </div>
-        </div>
-        <div id="cppEditor" class="editor-group hidden">
-            <div class="editor resizable">
-                <h3>C++</h3>
-                <textarea id="cppCode" placeholder="C++ code here..."></textarea>
-                <div class="resize-handle"></div>
-            </div>
-        </div>
-        <div id="javaEditor" class="editor-group hidden">
-            <div class="editor resizable">
-                <h3>Java</h3>
-                <textarea id="javaCode" placeholder="Java code here..."></textarea>
-                <div class="resize-handle"></div>
-            </div>
-        </div>
-        <!-- Additional editors can be added here -->
+    <div class="editor-container">
+        <textarea id="codeArea" placeholder="Write your code here..."></textarea>
+        
     </div>
 
     <button id="runButton">Run Code</button>
-    <iframe id="output" class="output-frame"></iframe>
+    <iframe class="output-frame" id="output"></iframe>
 
-    <input type="file" id="fileUpload" accept=".py,.cpp,.java,.html,.css,.js" />
     <script src="script.js"></script>
 </body>
-
 </html>

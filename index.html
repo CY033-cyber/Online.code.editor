@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Code Editor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div class="top-bar">
+        <label for="editorSelect">Select Editor:</label>
+        <select id="editorSelect">
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="javascript">JavaScript</option>
+        </select>
+        <button id="themeButton">Switch Theme</button>
+    </div>
+
+    <div class="editor-container">
+        <textarea id="htmlCode" placeholder="HTML code here..."></textarea>
+        <textarea id="cssCode" placeholder="CSS code here..."></textarea>
+        <textarea id="jsCode" placeholder="JavaScript code here..."></textarea>
+    </div>
+    
+    <button id="runButton">Run Code</button>
+    <iframe id="output" class="output-frame"></iframe>
+
+    <script src="script.js"></script>
+</body>
+</html>

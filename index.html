@@ -4,49 +4,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Code Editor</title>
+    <title>Multi-Language Code Editor</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="light">
 
     <div class="top-bar">
-        <label for="editorSelect">Select Editor:</label>
+        <label for="editorSelect">Select Language:</label>
         <select id="editorSelect">
-            <option value="html">HTML CSS js</option>
-            <option value="PYTHON">PYTHON </option>
-            <option value="C++">C++ </option>
-            <option value="JAVA">JAVA </option>
-            <option value="GO">GO </option>
-            <option value="RUST">RUST </option>
-            <option value="PHP">PHP </option>
-            <option value="C#">C# </option>
-            <option value="SQL">SQL </option>
-            <option value="PERL">PERL </option>
-            <option value="R">R </option>
-
-
-
-
+            <option value="html-css-js">HTML, CSS, JS</option>
+            <option value="python">Python</option>
+            <option value="cpp">C++</option>
+            <option value="java">Java</option>
+            <option value="go">Go</option>
+            <option value="rust">Rust</option>
+            <option value="php">PHP</option>
+            <option value="csharp">C#</option>
+            <option value="sql">SQL</option>
+            <option value="perl">Perl</option>
+            <option value="r">R</option>
         </select>
         <button id="themeButton">Switch Theme</button>
         <button id="saveButton">Save Code</button>
         <button id="loadButton">Load Code</button>
-
-
     </div>
 
-    <div class="editor-container">
-        <textarea id="htmlCode" placeholder="HTML code here..."></textarea>
-        <textarea id="cssCode" placeholder="CSS code here..."></textarea>
-        <textarea id="jsCode" placeholder="JavaScript code here..."></textarea>
-
+    <div class="editor-container" id="editorContainer">
+        <div id="htmlCssJsEditors" class="editor-group active">
+            <div class="editor resizable">
+                <h3>HTML</h3>
+                <textarea id="htmlCode" placeholder="HTML code here..."></textarea>
+                <div class="resize-handle"></div>
+            </div>
+            <div class="editor resizable">
+                <h3>CSS</h3>
+                <textarea id="cssCode" placeholder="CSS code here..."></textarea>
+                <div class="resize-handle"></div>
+            </div>
+            <div class="editor resizable">
+                <h3>JavaScript</h3>
+                <textarea id="jsCode" placeholder="JavaScript code here..."></textarea>
+                <div class="resize-handle"></div>
+            </div>
+        </div>
+        <div id="pythonEditor" class="editor-group hidden">
+            <div class="editor resizable">
+                <h3>Python</h3>
+                <textarea id="pythonCode" placeholder="Python code here..."></textarea>
+                <div class="resize-handle"></div>
+            </div>
+        </div>
+        <div id="cppEditor" class="editor-group hidden">
+            <div class="editor resizable">
+                <h3>C++</h3>
+                <textarea id="cppCode" placeholder="C++ code here..."></textarea>
+                <div class="resize-handle"></div>
+            </div>
+        </div>
+        <div id="javaEditor" class="editor-group hidden">
+            <div class="editor resizable">
+                <h3>Java</h3>
+                <textarea id="javaCode" placeholder="Java code here..."></textarea>
+                <div class="resize-handle"></div>
+            </div>
+        </div>
+        <!-- Additional editors can be added here -->
     </div>
-
 
     <button id="runButton">Run Code</button>
     <iframe id="output" class="output-frame"></iframe>
 
+    <input type="file" id="fileUpload" accept=".py,.cpp,.java,.html,.css,.js" />
     <script src="script.js"></script>
 </body>
 
